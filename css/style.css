@@ -34,7 +34,30 @@ body{
     border-radius: 5px;
     width: 450px;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 30%;
     padding: 20px;
+}
+
+#signupdiv{
+    background-color: white;
+    border-radius: 5px;
+    width: 500px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    padding: 20px;
+}
+
+#signupbtn{
+    border-radius: 8px;
+    border-color: #00ACC1;
+    color: white;
+    background-color: #00ACC1;
+    width:70%;
+}
+
+#signupbtn:hover{
+    color: #00ACC1;
+    background-color: white;
 }

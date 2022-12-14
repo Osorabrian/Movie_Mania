@@ -26,9 +26,10 @@
     </nav>
 
     <!--create Log in Form-->
-    <div id="logindiv"> 
+    <!-- <div id="logindiv"> 
 
-        <form>
+        <form id="loginform">
+
             <h1 style="text-align:center">Log In</h1>
 
             <label class="form-label">Email:</label>
@@ -47,6 +48,35 @@
             </div>
 
             <p class = "mt-2">Don't have an account? <a href='#'>create one</a></p>
+        </form>
+
+    </div> -->
+
+    <!--Create Signup form-->
+    <div id="signupdiv">
+
+        <form id="signupform">
+            <h1 style="text-align: center">Sign Up</h1>
+
+            <label class="form-label">First Name: </label>
+            <input type="text" class="form-control" placeholder="First Name" required>
+
+            <label class="form-label mt-2">Last Name: </label>
+            <input type="text" class="form-control" placeholder="Last Name" required>
+
+            <label class="form-label mt-2">Email: </label>
+            <input type="email" class="form-control" placeholder="example@gmail.com" required>
+
+            <label class="form-label mt-2">Password: </label>
+            <input type="password" class="form-control" placeholder="Password" required>
+
+            <label class="form-label mt-2">Confirm Password: </label>
+            <input type="password" class="form-control" placeholder="Password" required>
+
+            <div class="col text-center">
+                <button type="submit" id="signupbtn" class="btn mt-3">Log In</button>
+            </div>
+
         </form>
 
     </div>
