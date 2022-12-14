@@ -1,0 +1,39 @@
+body{
+    background-color: #E0E0E0;
+}
+
+.navbar{
+    background-color: #212529;
+}
+
+#logo{
+    height: 50px;
+    width: 60px;
+}
+
+
+.info{
+  border-color: #00ACC1;
+  color: #00ACC1;
+}
+
+#loginbtn{
+    border-radius: 10px;
+    border-color: #00ACC1;
+    color: #00ACC1;
+}
+
+#loginbtn:hover{
+    background-color: #00ACC1;
+    color: white;
+}
+
+#logindiv{
+    background-color: white;
+    border-radius: 5px;
+    width: 450px;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    padding: 20px;
+}

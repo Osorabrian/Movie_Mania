@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Mania</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!--create navbar-->
+    <nav class="navbar">
+
+            <a href="#" class="navbar-brand" style ="color: #00ACC1;">
+                <img src="./logo.png" alt="web logo" id="logo">
+                Movie Mania
+            </a>
+
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-info" type="submit">Search</button>
+          </form>
+
+    </nav>
+
+    <!--create Log in Form-->
+    <div id="logindiv"> 
+        <form>
+            <h1>Log In</h1>
+            <label class="form-label">Email:</label>
+            <input type="email" class="form-control" placeholder="example@gmail.com" id="email_login">
+            <label class="form-label mt-1">Password:</label>
+            <input type="password" class="form-control" placeholder="passwrord" id="password_login">
+            <input type="checkbox" >
+            <label class="form-label mt-2">Remember Me</label>
+            <button type="submit" id="loginbtn" class="btn mt-2 mr-1">Log In</button>
+            <p>Don't have an account? <a href='#'>create one</a></p>
+        </form>
+    </div>
+
+
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js"></script>   
+</body>
+</html>
