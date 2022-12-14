@@ -1,0 +1,24 @@
+{
+  "name": "movie_mania",
+  "version": "1.0.0",
+  "description": "movie preview webpage",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Osorabrian/movie_mania.git"
+  },
+  "keywords": [
+    "movie",
+    "login",
+    "signup"
+  ],
+  "author": "brian osora.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Osorabrian/movie_mania/issues"
+  },
+  "homepage": "https://github.com/Osorabrian/movie_mania#readme"
+}
