@@ -61,3 +61,18 @@ body{
     color: #00ACC1;
     background-color: white;
 }
+
+.form-group{
+    display:inline;
+    width: 40%;
+}
+
+
+#topmovies{
+        height: 660px;
+}
+
+h2{
+    font-family: -apple-system;
+    margin-left: 10px;
+}
