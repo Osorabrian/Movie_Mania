@@ -72,7 +72,21 @@ body{
         height: 660px;
 }
 
-h2{
+h2, h6, p{
     font-family: -apple-system;
     margin-left: 10px;
+} 
+
+#fire{
+    color:#e25822;
+}
+
+#pizza{
+    color: #BF873B;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
 }
