@@ -109,3 +109,21 @@ h2, h6, p{
 #calender{
     color: blue;
 }
+
+#welcomemessage{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+}
+
+#searchbtn{
+    border-radius: 8px;
+    border-color: #00ACC1;
+    color: white;
+    background-color: #00ACC1;
+}
+
+#searchbtn:hover{
+    color: #00ACC1;
+    background-color: white;
+}

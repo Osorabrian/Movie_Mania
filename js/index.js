@@ -87,6 +87,54 @@ function searchMovies(){
     
 }
 
+function homepagesearchMovies(){
+
+    const searchForm = document.getElementById('homepagesearchform')
+    
+    searchForm.addEventListener('submit', (e) => {
+
+        e.preventDefault()
+
+        const movie = document.getElementById('homemoviename').value
+        
+        fetch(`https://flixster.p.rapidapi.com/search?query=${movie}&zipCode=90002&radius=50`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-RapidAPI-Key': '2d19da3935msh75738651fc8a894p14a018jsn9c623ecce237',
+		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const movieResults = (data.data.search.movies)
+            movieResults.forEach(movie => {
+                console.log(movie)
+                const title = movie.name
+
+                let poster; 
+                if(movie.posterImage === null){
+                    poster = 'logo.png'
+                }else{
+                    poster = movie.posterImage.url
+                }
+
+                let user;
+                if(movie.userRating.dtlLikedScore === null){
+                    user = 0
+                }else{
+                    user = movie.userRating.dtlLikedScore
+                }
+
+                const movies = searchMoviesDiv(poster,title,user)
+                document.getElementById('searchmovies').append(movies)
+            });
+        })
+
+        searchForm.reset()
+    })
+    
+}
 
 function upcomingMoviesDiv (poster,title,date,user){
 
@@ -265,5 +313,5 @@ document.addEventListener('DOMContentLoaded', () => {
         topMovies.style.display = 'block'
     })
 
-    
+
 })
