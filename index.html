@@ -21,7 +21,7 @@
 
             <ul class="navbar-nav me-2 d-flex flex-row">
                 <li class="navbar-item">
-                    <a class="nav-link text-info active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link text-info " aria-current="page" href="#">Home</a>
                 </li>
                 <li class="navbar-item ms-4">
                     <a class="nav-link text-info" href="#">Top Movies</a>
@@ -36,13 +36,13 @@
 
         <form class="d-flex" role="search" id="searchform">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="moviename">
-            <button class="btn btn-outline-info" type="submit">Search</button>
+            <button class="btn btn-outline-info me-1" type="submit">Search</button>
         </form>
 
     </nav>
 
     <!--create Log in Form-->
-    <!-- <div id="logindiv"> 
+    <div id="logindiv"> 
 
         <form id="loginform">
 
@@ -63,13 +63,13 @@
                 <button type="submit" id="loginbtn" class="btn mt-2">Log In</button>
             </div>
 
-            <p class = "mt-2">Don't have an account? <a href='#'>create one</a></p>
+            <p class = "mt-2">Don't have an account? <a href='#' role="button" id="createaccount">create one</a></p>
         </form>
 
-    </div> -->
+    </div>
 
     <!--Create Signup form-->
-    <!-- <div id="signupdiv">
+    <div id="signupdiv">
 
         <form id="signupform">
             <h1 style="text-align: center">Sign Up</h1>
@@ -93,26 +93,26 @@
                 <button type="submit" id="signupbtn" class="btn mt-3">Sign Up</button>
             </div>
 
-        </form> -->
+        </form>
 
-    <!-- </div> -->
+    </div>
 
     
     
 
-    <!-- Top movies div where we render top movies
+    <!-- Top movies div where we render top movies-->
     <div id="topmovies" class="row">
     <h2 class="mt-3">Top Movies</h2>
     <hr>
-    </div> -->
+    </div>
 
-    <!-- Top movies div where we render top movies
+    <!-- Top movies div where we render top movies-->
     <div id="upcomingmovies" class="row">
         <h2 class="mt-3">Upcoming Movies</h2>
         <hr>
-    </div> -->
+    </div> 
 
-    <!--Div that displays search results-->
+    <!-- Div that displays search results -->
     <div id="searchmovies" class="row">
         <h2 class="mt-3">Search Results</h2>
         <hr>
