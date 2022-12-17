@@ -76,9 +76,15 @@ function searchMovies(){
                 }else{
                     user = movie.userRating.dtlLikedScore
                 }
-
                 const movies = searchMoviesDiv(poster,title,user)
                 document.getElementById('searchmovies').append(movies)
+
+                logInDiv.style.display = 'none'
+                signUpDiv.style.display = 'none'
+                homePageDiv.style.display = 'block'
+                topMoviesDiv.style.display = 'none'
+                upcomingMoviesDiv.style.display = 'none'
+                searchMoviesDiv.style.display = 'none'
             });
         })
 
@@ -287,66 +293,100 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchTopMovies()
 
     const logInDiv = document.querySelector('#logindiv')
-    const logInForm = document.querySelector('#loginform')
-
     const signUpDiv = document.querySelector('#signupdiv')
+    const homePageDiv = document.querySelector('#homepage')
+    const upcomingMoviesDiv = document.querySelector('#upcomingmovies')
+    const topMoviesDiv = document.querySelector('#topmovies')
+    const searchMoviesDiv = document.querySelector('#searchmovies')    
+
     const signUpForm = document.querySelector('#signupform')
+    const logInForm = document.querySelector('#loginform')
+    
 
     const topmoviesNav = document.getElementById('topmoviesnav')
     const homeMoviesNav = document.getElementById('homemoviesnav')
     const upcomingMoviesNav = document.getElementById('upcomingmoviesnav')
     const logOutNav = document.getElementById('logoutnav')
 
-    const homePageDiv = document.querySelector('#homepage')
-    const upcomingMoviesDiv = document.querySelector('#upcomingmovies')
-    const topMoviesDiv = document.querySelector('#topmovies')
-    
     logInForm.addEventListener('submit', (e) => {
         e.preventDefault()
         logInDiv.style.display = 'none'
+        signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'block'
-
+        topMoviesDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'none'
+        logInForm.reset()
     })
 
     document.getElementById('createaccount').addEventListener('click', (e) => {
         e.preventDefault()
         logInDiv.style.display = 'none'
         signUpDiv.style.display = 'block'
+        homePageDiv.style.display = 'none'
+        topMoviesDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'none'
     })
 
     signUpForm.addEventListener('submit', (e) => {
         e.preventDefault()
+        logInDiv.style.display = 'none'
         signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'block'
+        topMoviesDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'none'
+        signUpForm.reset()
     })
 
     topmoviesNav.addEventListener('click', (e) => {
         e.preventDefault()
+        logInDiv.style.display = 'none'
+        signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'none'
         topMoviesDiv.style.display = 'block'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'none'
     })
 
     homeMoviesNav.addEventListener('click', (e) => {
         e.preventDefault()
-        topMoviesDiv.style.display = 'none'
+        logInDiv.style.display = 'none'
+        signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'block'
+        topMoviesDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'none'
     })
 
     homeMoviesNav.addEventListener('click', (e) => {
         e.preventDefault()
-        topMoviesDiv.style.display = 'none'
+        logInDiv.style.display = 'none'
+        signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'block'
+        topMoviesDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'none'
     })
 
     upcomingMoviesNav.addEventListener('click', (e) => {
         e.preventDefault()
+        logInDiv.style.display = 'none'
+        signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'none'
+        topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'block'
+        searchMoviesDiv.style.display = 'none'
     })
 
     logOutNav.addEventListener('click', (e) => {
         e.preventDefault()
-        upcomingMoviesDiv.style.display = 'none'
         logInDiv.style.display = 'block'
+        signUpDiv.style.display = 'none'
+        homePageDiv.style.display = 'none'
+        topMoviesDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'none'
     })
 })
