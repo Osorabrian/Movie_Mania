@@ -292,12 +292,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const signUpDiv = document.querySelector('#signupdiv')
     const signUpForm = document.querySelector('#signupform')
 
-    const topMovies = document.querySelector('#topmovies')
+    const topmoviesNav = document.getElementById('topmoviesnav')
+    const homeMoviesNav = document.getElementById('homemoviesnav')
+    const upcomingMoviesNav = document.getElementById('upcomingmoviesnav')
+    const logOutNav = document.getElementById('logoutnav')
+
+    const homePageDiv = document.querySelector('#homepage')
+    const upcomingMoviesDiv = document.querySelector('#upcomingmovies')
+    const topMoviesDiv = document.querySelector('#topmovies')
     
     logInForm.addEventListener('submit', (e) => {
         e.preventDefault()
         logInDiv.style.display = 'none'
-        topMovies.style.display = 'block'
+        homePageDiv.style.display = 'block'
 
     })
 
@@ -310,8 +317,36 @@ document.addEventListener('DOMContentLoaded', () => {
     signUpForm.addEventListener('submit', (e) => {
         e.preventDefault()
         signUpDiv.style.display = 'none'
-        topMovies.style.display = 'block'
+        homePageDiv.style.display = 'block'
     })
 
+    topmoviesNav.addEventListener('click', (e) => {
+        e.preventDefault()
+        homePageDiv.style.display = 'none'
+        topMoviesDiv.style.display = 'block'
+    })
 
+    homeMoviesNav.addEventListener('click', (e) => {
+        e.preventDefault()
+        topMoviesDiv.style.display = 'none'
+        homePageDiv.style.display = 'block'
+    })
+
+    homeMoviesNav.addEventListener('click', (e) => {
+        e.preventDefault()
+        topMoviesDiv.style.display = 'none'
+        homePageDiv.style.display = 'block'
+    })
+
+    upcomingMoviesNav.addEventListener('click', (e) => {
+        e.preventDefault()
+        homePageDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'block'
+    })
+
+    logOutNav.addEventListener('click', (e) => {
+        e.preventDefault()
+        upcomingMoviesDiv.style.display = 'none'
+        logInDiv.style.display = 'block'
+    })
 })
