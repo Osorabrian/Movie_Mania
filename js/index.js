@@ -301,7 +301,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const signUpForm = document.querySelector('#signupform')
     const logInForm = document.querySelector('#loginform')
-    
+    const homeSearchForm = document.querySelector('#homepagesearchform')
+    const navSearchForm = document.querySelector('#searchform')
+
 
     const topmoviesNav = document.getElementById('topmoviesnav')
     const homeMoviesNav = document.getElementById('homemoviesnav')
@@ -388,5 +390,27 @@ document.addEventListener('DOMContentLoaded', () => {
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
         searchMoviesDiv.style.display = 'none'
+    })
+
+    homeSearchForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        logInDiv.style.display = 'none'
+        signUpDiv.style.display = 'none'
+        homePageDiv.style.display = 'none'
+        topMoviesDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'block'
+        homeSearchForm.reset()
+    })
+
+    navSearchForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        logInDiv.style.display = 'none'
+        signUpDiv.style.display = 'none'
+        homePageDiv.style.display = 'none'
+        topMoviesDiv.style.display = 'none'
+        upcomingMoviesDiv.style.display = 'none'
+        searchMoviesDiv.style.display = 'block'
+        navSearchForm.reset()
     })
 })
