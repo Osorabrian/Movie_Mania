@@ -37,7 +37,12 @@ body{
     top: 20%;
     left: 30%;
     padding: 20px;
-    display: block;
+    display: none;
+}
+
+#homepage{
+    background-image: url('../homepage.jpeg');
+    height: 522px;
 }
 
 #signupdiv{
