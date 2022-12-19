@@ -1,3 +1,6 @@
+let thumbsUp = 0
+let thumbsDown = 0
+
 function searchMoviesDiv(poster,title,user){
 
     const searchMoviesRow = document.createElement('div')
@@ -24,14 +27,10 @@ function searchMoviesDiv(poster,title,user){
 
     const userRating = document.createElement('p')
     userRating.classList.add('card-text','ms-1')
-    userRating.innerHTML= `user rating:     <i class="fa-solid fa-fire" id="fire"></i>  ${user}% `
-
-    const thumbs = document.createElement('p')
-    thumbs.innerHTML = `<i class="fa-regular fa-thumbs-up"></i>     <i class="fa-regular fa-thumbs-down"></i>`
-
+    userRating.innerHTML= `<strong>user rating:</strong>     <i class="fa-solid fa-fire" id="fire"></i>  ${user}% `
+   
     cardBody.appendChild(movieTitle)
     cardBody.appendChild(userRating)
-    cardBody.appendChild(thumbs)
 
     cardDiv.appendChild(moviePoster)
     cardDiv.appendChild(cardBody)
@@ -39,6 +38,8 @@ function searchMoviesDiv(poster,title,user){
     searchMoviesRow.appendChild(cardDiv)
 
     return searchMoviesRow
+
+    
 }
 
 
@@ -56,7 +57,7 @@ function searchMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': 'cd83e91e5fmsheda6c39c3e92390p17f992jsn51ea51b88097',
+            'X-RapidAPI-Key': '2cc187e818msha0f85d795d7283dp105ac7jsnc6ba1cd15569',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
             }
         })
@@ -64,7 +65,7 @@ function searchMovies(){
         .then(data => {
             const movieResults = (data.data.search.movies)
             movieResults.forEach(movie => {
-                console.log(movie)
+
                 const title = movie.name
 
                 let poster; 
@@ -104,7 +105,7 @@ function homepagesearchMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': 'cd83e91e5fmsheda6c39c3e92390p17f992jsn51ea51b88097',
+            'X-RapidAPI-Key': '2cc187e818msha0f85d795d7283dp105ac7jsnc6ba1cd15569',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
             }
         })
@@ -165,11 +166,11 @@ function upcomingMoviesDiv (poster,title,date,user){
 
     const releaseDate = document.createElement('p')
     releaseDate.classList.add('card-text','ms-1')
-    releaseDate.innerHTML= `Release Date <i class="fa-solid fa-calendar-xmark" id="calender"></i> :    ${date}`
+    releaseDate.innerHTML= `<strong>Release Date</strong>   <i class="fa-solid fa-calendar-xmark" id="calender"></i> :    ${date}`
 
     const userRating = document.createElement('p')
     userRating.classList.add('card-text','ms-1')
-    userRating.innerHTML= `user rating:     <i class="fa-solid fa-fire" id="fire"></i>  ${user}% `
+    userRating.innerHTML= `<strong>user rating:</strong>     <i class="fa-solid fa-fire" id="fire"></i>  ${user}% `
 
     cardBody.appendChild(movieTitle)
     cardBody.appendChild(releaseDate)
@@ -188,7 +189,7 @@ function fetchUpcomingMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': 'cd83e91e5fmsheda6c39c3e92390p17f992jsn51ea51b88097',
+            'X-RapidAPI-Key': '2cc187e818msha0f85d795d7283dp105ac7jsnc6ba1cd15569',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
         }
     })
@@ -239,16 +240,15 @@ function topMoviesDiv (image,title,rank,user){
 
     const movieRating = document.createElement('p')
     movieRating.classList.add('card-text')
-    movieRating.innerHTML= `Rank:   <i class="fa-solid fa-ranking-star"></i>       ${rank}`
+    movieRating.innerHTML= `<strong>Rank:</strong>   <i class="fa-solid fa-ranking-star" id="rank"></i>       ${rank}`
 
     const userRating = document.createElement('p')
     userRating.classList.add('card-text')
-    userRating.innerHTML= `user rating:   <i class="fa-solid fa-fire" id="fire"></i>        ${user}%`
+    userRating.innerHTML= `<strong>user rating:</strong>   <i class="fa-solid fa-fire" id="fire"></i>        ${user}%`
 
     cardBody.appendChild(movieTitle)
     cardBody.appendChild(movieRating)
     cardBody.appendChild(userRating)
-
     cardDiv.appendChild(moviePoster)
     cardDiv.appendChild(cardBody)
 
@@ -262,7 +262,7 @@ function fetchTopMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': 'cd83e91e5fmsheda6c39c3e92390p17f992jsn51ea51b88097',
+            'X-RapidAPI-Key': '2cc187e818msha0f85d795d7283dp105ac7jsnc6ba1cd15569',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
         }
     })
@@ -416,4 +416,5 @@ document.addEventListener('DOMContentLoaded', () => {
         searchMoviesDiv.style.display = 'flex'
         navSearchForm.reset()
     })
+
 })

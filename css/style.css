@@ -2,7 +2,6 @@ body{
     background-color: #E0E0E0;
 }
 
-
 .navbar{
     background-color: #212529;
 }
@@ -109,7 +108,7 @@ h2, h6, p{
 }
 
 #calender{
-    color: blue;
+    color: #66CDAA;
 }
 
 #welcomemessage{
@@ -128,4 +127,8 @@ h2, h6, p{
 #searchbtn:hover{
     color: #00ACC1;
     background-color: white;
+}
+
+.rank{
+    color: #6CB4EE;
 }
