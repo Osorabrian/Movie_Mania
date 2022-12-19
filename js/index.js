@@ -4,7 +4,7 @@ function searchMoviesDiv(poster,title,user){
     searchMoviesRow.style.width = '20%'
 
     const cardDiv = document.createElement('div')
-    cardDiv.classList.add('card','mb-3', 'ms-1', 'me-1')
+    cardDiv.classList.add('card','mb-3', 'ms-1', 'me-1', 'shadow')
     cardDiv.id = 'moviecard'
 
     const moviePoster = document.createElement('img')
@@ -145,7 +145,7 @@ function upcomingMoviesDiv (poster,title,date,user){
     upcomingMoviesRow.style.width = '20%'
 
     const cardDiv = document.createElement('div')
-    cardDiv.classList.add('card','mb-3', 'ms-1', 'me-1')
+    cardDiv.classList.add('card','mb-3', 'ms-1', 'me-1', 'shadow')
     cardDiv.id = 'moviecard'
 
     const moviePoster = document.createElement('img')
@@ -219,7 +219,7 @@ function topMoviesDiv (image,title,rank,user){
     row.style.width = '20%'
 
     const cardDiv = document.createElement('div')
-    cardDiv.classList.add('card','mb-3', 'ms-1', 'me-1')
+    cardDiv.classList.add('card','mb-3','ms-1','me-1', 'shadow')
     cardDiv.id = 'moviecard'
 
     const moviePoster = document.createElement('img')
