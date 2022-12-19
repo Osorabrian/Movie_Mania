@@ -26,8 +26,12 @@ function searchMoviesDiv(poster,title,user){
     userRating.classList.add('card-text','ms-1')
     userRating.innerHTML= `user rating:     <i class="fa-solid fa-fire" id="fire"></i>  ${user}% `
 
+    const thumbs = document.createElement('p')
+    thumbs.innerHTML = `<i class="fa-regular fa-thumbs-up"></i>     <i class="fa-regular fa-thumbs-down"></i>`
+
     cardBody.appendChild(movieTitle)
     cardBody.appendChild(userRating)
+    cardBody.appendChild(thumbs)
 
     cardDiv.appendChild(moviePoster)
     cardDiv.appendChild(cardBody)
@@ -52,7 +56,7 @@ function searchMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': '2d19da3935msh75738651fc8a894p14a018jsn9c623ecce237',
+            'X-RapidAPI-Key': 'cd83e91e5fmsheda6c39c3e92390p17f992jsn51ea51b88097',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
             }
         })
@@ -78,13 +82,6 @@ function searchMovies(){
                 }
                 const movies = searchMoviesDiv(poster,title,user)
                 document.getElementById('searchmovies').append(movies)
-
-                logInDiv.style.display = 'none'
-                signUpDiv.style.display = 'none'
-                homePageDiv.style.display = 'block'
-                topMoviesDiv.style.display = 'none'
-                upcomingMoviesDiv.style.display = 'none'
-                searchMoviesDiv.style.display = 'none'
             });
         })
 
@@ -107,7 +104,7 @@ function homepagesearchMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': '2d19da3935msh75738651fc8a894p14a018jsn9c623ecce237',
+            'X-RapidAPI-Key': 'cd83e91e5fmsheda6c39c3e92390p17f992jsn51ea51b88097',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
             }
         })
@@ -191,7 +188,7 @@ function fetchUpcomingMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': '2d19da3935msh75738651fc8a894p14a018jsn9c623ecce237',
+            'X-RapidAPI-Key': 'cd83e91e5fmsheda6c39c3e92390p17f992jsn51ea51b88097',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
         }
     })
@@ -199,7 +196,6 @@ function fetchUpcomingMovies(){
     .then(data => {
         const upcomingMovies = (data.data.upcoming)
         upcomingMovies.forEach( movie => { 
-            console.log(movie)
             const title = movie.name
             const poster = movie.posterImage.url
 
@@ -250,7 +246,7 @@ function topMoviesDiv (image,title,rank,user){
     userRating.innerHTML= `user rating:   <i class="fa-solid fa-fire" id="fire"></i>        ${user}%`
 
     cardBody.appendChild(movieTitle)
-    cardBody.appendChild(releaseDate)
+    cardBody.appendChild(movieRating)
     cardBody.appendChild(userRating)
 
     cardDiv.appendChild(moviePoster)
@@ -266,7 +262,7 @@ function fetchTopMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': '2d19da3935msh75738651fc8a894p14a018jsn9c623ecce237',
+            'X-RapidAPI-Key': 'cd83e91e5fmsheda6c39c3e92390p17f992jsn51ea51b88097',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
         }
     })
@@ -276,11 +272,19 @@ function fetchTopMovies(){
         movieArrays.forEach( movie => {  
             const title = movie.name
             const poster = movie.posterImage.url
-            const user = movie.userRating.dtlLikedScore
+
+            let user;
+
+            if(movie.userRating === null){
+                user = parseInt(0,10);
+            }else{
+                user = movie.userRating.dtlLikedScore;
+            }
+
             const rank = movie.sortPopularity
+
             const movies = topMoviesDiv(poster,title,rank,user)
             document.getElementById('topmovies').append(movies)
-            
         });
     })
 }
@@ -304,7 +308,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeSearchForm = document.querySelector('#homepagesearchform')
     const navSearchForm = document.querySelector('#searchform')
 
-
     const topmoviesNav = document.getElementById('topmoviesnav')
     const homeMoviesNav = document.getElementById('homemoviesnav')
     const upcomingMoviesNav = document.getElementById('upcomingmoviesnav')
@@ -314,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
         logInDiv.style.display = 'none'
         signUpDiv.style.display = 'none'
-        homePageDiv.style.display = 'block'
+        homePageDiv.style.display = 'flex'
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
         searchMoviesDiv.style.display = 'none'
@@ -324,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('createaccount').addEventListener('click', (e) => {
         e.preventDefault()
         logInDiv.style.display = 'none'
-        signUpDiv.style.display = 'block'
+        signUpDiv.style.display = 'flex'
         homePageDiv.style.display = 'none'
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
@@ -335,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
         logInDiv.style.display = 'none'
         signUpDiv.style.display = 'none'
-        homePageDiv.style.display = 'block'
+        homePageDiv.style.display = 'flex'
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
         searchMoviesDiv.style.display = 'none'
@@ -347,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logInDiv.style.display = 'none'
         signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'none'
-        topMoviesDiv.style.display = 'block'
+        topMoviesDiv.style.display = 'flex'
         upcomingMoviesDiv.style.display = 'none'
         searchMoviesDiv.style.display = 'none'
     })
@@ -356,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
         logInDiv.style.display = 'none'
         signUpDiv.style.display = 'none'
-        homePageDiv.style.display = 'block'
+        homePageDiv.style.display = 'flex'
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
         searchMoviesDiv.style.display = 'none'
@@ -366,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
         logInDiv.style.display = 'none'
         signUpDiv.style.display = 'none'
-        homePageDiv.style.display = 'block'
+        homePageDiv.style.display = 'flex'
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
         searchMoviesDiv.style.display = 'none'
@@ -378,13 +381,13 @@ document.addEventListener('DOMContentLoaded', () => {
         signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'none'
         topMoviesDiv.style.display = 'none'
-        upcomingMoviesDiv.style.display = 'block'
+        upcomingMoviesDiv.style.display = 'flex'
         searchMoviesDiv.style.display = 'none'
     })
 
     logOutNav.addEventListener('click', (e) => {
         e.preventDefault()
-        logInDiv.style.display = 'block'
+        logInDiv.style.display = 'flex'
         signUpDiv.style.display = 'none'
         homePageDiv.style.display = 'none'
         topMoviesDiv.style.display = 'none'
@@ -399,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
         homePageDiv.style.display = 'none'
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
-        searchMoviesDiv.style.display = 'block'
+        searchMoviesDiv.style.display = 'flex'
         homeSearchForm.reset()
     })
 
@@ -410,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
         homePageDiv.style.display = 'none'
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
-        searchMoviesDiv.style.display = 'block'
+        searchMoviesDiv.style.display = 'flex'
         navSearchForm.reset()
     })
 })
