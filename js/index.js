@@ -55,7 +55,7 @@ function searchMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': '2cc187e818msha0f85d795d7283dp105ac7jsnc6ba1cd15569',
+            'X-RapidAPI-Key': 'f7c2a8cc9dmsh625b2029971a411p10a051jsnabb167cd0d9d',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
             }
         })
@@ -104,7 +104,7 @@ function homepagesearchMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': '2cc187e818msha0f85d795d7283dp105ac7jsnc6ba1cd15569',
+            'X-RapidAPI-Key': 'f7c2a8cc9dmsh625b2029971a411p10a051jsnabb167cd0d9d',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
             }
         })
@@ -191,7 +191,7 @@ function fetchUpcomingMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': '2cc187e818msha0f85d795d7283dp105ac7jsnc6ba1cd15569',
+            'X-RapidAPI-Key': 'f7c2a8cc9dmsh625b2029971a411p10a051jsnabb167cd0d9d',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
         }
     })
@@ -268,7 +268,7 @@ function fetchTopMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': '2cc187e818msha0f85d795d7283dp105ac7jsnc6ba1cd15569',
+            'X-RapidAPI-Key': 'f7c2a8cc9dmsh625b2029971a411p10a051jsnabb167cd0d9d',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
         }
     })
