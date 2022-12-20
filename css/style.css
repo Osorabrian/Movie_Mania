@@ -37,7 +37,7 @@ body{
     top: 20%;
     left: 30%;
     padding: 20px;
-    display: flex;
+    display: block;
 }
 
 #homepage{
@@ -71,7 +71,7 @@ body{
 }
 
 .form-group{
-    display:inline;
+    display: inline;
     width: 40%;
 }
 
