@@ -203,7 +203,7 @@ function fetchUpcomingMovies(){
             const poster = movie.posterImage.url
             // conditional statement to check if the user rating is null
             let user;
-            if(movie.userRating.dtlLikedScore === null){
+            if(movie.userRating === null){
                 user = 0
             }else{
                 user = movie.userRating.dtlLikedScore
