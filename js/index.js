@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('createaccount').addEventListener('click', (e) => {
         e.preventDefault()
         logInDiv.style.display = 'none'
-        signUpDiv.style.display = 'flex'
+        signUpDiv.style.display = 'block'
         homePageDiv.style.display = 'none'
         topMoviesDiv.style.display = 'none'
         upcomingMoviesDiv.style.display = 'none'
@@ -344,13 +344,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // event listener for sign up form to create account
     signUpForm.addEventListener('submit', (e) => {
         e.preventDefault()
-        logInDiv.style.display = 'none'
-        signUpDiv.style.display = 'none'
-        homePageDiv.style.display = 'flex'
-        topMoviesDiv.style.display = 'none'
-        upcomingMoviesDiv.style.display = 'none'
-        searchMoviesDiv.style.display = 'none'
-        alert(`Welcome ${document.getElementById('fullname').value}`)
+
+        const pass1 = document.getElementById('password1').value
+        const pass2 = document.getElementById('password2').value
+
+        if(pass1 !== pass2){
+            alert("passwords dont match")
+        }else{
+            logInDiv.style.display = 'none'
+            signUpDiv.style.display = 'none'
+            homePageDiv.style.display = 'flex'
+            topMoviesDiv.style.display = 'none'
+            upcomingMoviesDiv.style.display = 'none'
+            searchMoviesDiv.style.display = 'none'
+            alert(`Welcome ${document.getElementById('fullname').value}`)
+        }
         signUpForm.reset() 
     })
 
