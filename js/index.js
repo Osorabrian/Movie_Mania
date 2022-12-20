@@ -26,6 +26,7 @@ function searchMoviesDiv(poster,title,user){
     const userRating = document.createElement('p')
     userRating.classList.add('card-text','ms-1')
     userRating.innerHTML= `<strong>user rating:</strong>     <i class="fa-solid fa-fire" id="fire"></i>  ${user}% `
+
    // append child elements to card body
     cardBody.appendChild(movieTitle)
     cardBody.appendChild(userRating)
@@ -35,9 +36,8 @@ function searchMoviesDiv(poster,title,user){
     // append card to div
     searchMoviesRow.appendChild(cardDiv)
     // return div
-    return searchMoviesRow
 
-    
+    return searchMoviesRow
 }
 
 // function used to fetch for searched movies from the API
@@ -55,7 +55,7 @@ function searchMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': 'f7c2a8cc9dmsh625b2029971a411p10a051jsnabb167cd0d9d',
+            'X-RapidAPI-Key': '771acb0975msh873445a6639176ep1c60cejsn9e9a936af421',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
             }
         })
@@ -104,7 +104,7 @@ function homepagesearchMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': 'f7c2a8cc9dmsh625b2029971a411p10a051jsnabb167cd0d9d',
+            'X-RapidAPI-Key': '771acb0975msh873445a6639176ep1c60cejsn9e9a936af421',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
             }
         })
@@ -191,7 +191,7 @@ function fetchUpcomingMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': 'f7c2a8cc9dmsh625b2029971a411p10a051jsnabb167cd0d9d',
+            'X-RapidAPI-Key': '771acb0975msh873445a6639176ep1c60cejsn9e9a936af421',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
         }
     })
@@ -270,7 +270,7 @@ function fetchTopMovies(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-RapidAPI-Key': 'f7c2a8cc9dmsh625b2029971a411p10a051jsnabb167cd0d9d',
+            'X-RapidAPI-Key': '771acb0975msh873445a6639176ep1c60cejsn9e9a936af421',
 		    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
         }
     })
@@ -295,7 +295,6 @@ function fetchTopMovies(){
         });
     })
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
     // invoke functions for creating divs
@@ -431,5 +430,4 @@ document.addEventListener('DOMContentLoaded', () => {
         searchMoviesDiv.style.display = 'flex'
         navSearchForm.reset()
     })
-
 })
