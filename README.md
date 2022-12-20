@@ -7,7 +7,7 @@ Brian Osora  20th December 2022
 Movie mania is a web page that allows users to log in , sign up, view top movies, upcoming movies and enable users to search for movies. The webpage is linked to a public API <a href="https://rapidapi.com/apidojo/api/flixster">flixster API</a> where we use to fetch data form <a href="https://www.rottentomatoes.com/">rotten tomatoes</a> and <a href="https://flixster.com/">flixster.com</a>
 
 ## Live Link
-Live link: movie-mania-mu.vercel.app
+Live link: [movie-mania-mu.vercel.app](https://movie-mania-mu.vercel.app/)
 
 ## Screenshots
 ### Log in Page
