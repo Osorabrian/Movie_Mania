@@ -205,6 +205,8 @@ function fetchUpcomingMovies(){
             let user;
             if(movie.userRating === null){
                 user = 0
+            }else if(movie.userRating.dtlLikedScore === null){
+                user = 0
             }else{
                 user = movie.userRating.dtlLikedScore
             }
